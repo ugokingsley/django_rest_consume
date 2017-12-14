@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+ <div class="col-sm-6 col-sm-offset-3">
+
+{% if repositories %}
+      {% for obj in repositories %}
+
+
+                    <div class="jumbotron">
+                        <p>{{obj.name}}</p>
+                        <p>{{obj.owner.avatar_url}}</p>
+                        <p>{{obj.description}}</p>
+                        <p>{{obj.license.name}}</p>
+                    </div>
+
+
+
+     {% endfor %}
+
+{% else %}
+    <p>no repo for this org</p>
+{% endif %}
+ </div>
+
+{% endblock  %}
